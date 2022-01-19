@@ -1,12 +1,16 @@
 package uz.elmurodov.services.organization;
 
+import uz.elmurodov.container.UNIContainer;
 import uz.elmurodov.dtos.organization.OrganizationCreateDto;
 import uz.elmurodov.dtos.organization.OrganizationDto;
 import uz.elmurodov.exception.CustomerSQLException;
 import uz.elmurodov.repository.organization.OrganizationRepositoryImpl;
 import uz.elmurodov.response.Data;
 import uz.elmurodov.response.ResponseEntity;
+import uz.elmurodov.security.Organization;
 import uz.elmurodov.services.BaseService;
+
+import java.util.List;
 
 /**
  * @author Saydali Murodullayev, Tue 11:12 AM. 1/18/2022
@@ -35,6 +39,9 @@ public class OrganizationService extends BaseService<OrganizationRepositoryImpl,
     @Override
     public ResponseEntity<OrganizationDto> get(Long id) {
         return null;
+    }
+    public List<OrganizationDto> getOrganization(long id ,String... args){
+       return UNIContainer.getBean(OrganizationRepositoryImpl.class).getOrg(id);
     }
 
     private boolean checkOrganizationNameForExistence(String orgName) {
