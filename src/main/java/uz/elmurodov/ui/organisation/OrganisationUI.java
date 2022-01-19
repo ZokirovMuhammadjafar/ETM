@@ -32,7 +32,7 @@ public class OrganisationUI extends BaseAbstractUI implements BaseUI {
         org.setWebsite(Input.getStr("Enter website: "));
 
         ResponseEntity<Data<?>> response = organizationService.create(org);
-
+show(response);
     }
 
     @Override
@@ -77,7 +77,6 @@ public class OrganisationUI extends BaseAbstractUI implements BaseUI {
         OrganizationService organizationService = UNIContainer.getBean(OrganizationService.class);
         list();
         String orgName = Input.getStr("Enter organization name which you want to update: ");
-
 
 
         ResponseEntity<Data<?>> response = organizationService.delete(orgName);

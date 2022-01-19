@@ -4,8 +4,10 @@ import uz.elmurodov.property.ApplicationProperties;
 import uz.elmurodov.property.DatabaseProperties;
 import uz.elmurodov.repository.auth.AuthUserRepositoryImpl;
 import uz.elmurodov.repository.organization.OrganizationRepositoryImpl;
+import uz.elmurodov.repository.project.ProjectRepositoryImpl;
 import uz.elmurodov.services.auth.AuthUserService;
 import uz.elmurodov.services.organization.OrganizationService;
+import uz.elmurodov.services.project.ProjectService;
 import uz.elmurodov.ui.auth.AuthUI;
 import uz.elmurodov.ui.column.ColumnUI;
 import uz.elmurodov.ui.comment.CommentUI;
@@ -32,6 +34,8 @@ public class UNIContainer {
     private final static AuthUserService AUTH_USER_SERVICE;
     private final static OrganizationService ORGANIZATION_SERVICE;
     private final static OrganizationRepositoryImpl ORGANIZATION_REPOSITORY;
+    private final static ProjectService PROJECT_SERVICE;
+    private final static ProjectRepositoryImpl PROJECT_REPOSITORY;
 
 
     static {
@@ -56,6 +60,9 @@ public class UNIContainer {
         AUTH_USER_SERVICE = new AuthUserService(AUTH_USER_REPOSITORY);
         ORGANIZATION_REPOSITORY = new OrganizationRepositoryImpl();
         ORGANIZATION_SERVICE = new OrganizationService(ORGANIZATION_REPOSITORY);
+        PROJECT_REPOSITORY = new ProjectRepositoryImpl();
+        PROJECT_SERVICE = new ProjectService(PROJECT_REPOSITORY);
+
     }
 
     public static <T> T getBean(Class<T> bean) {
