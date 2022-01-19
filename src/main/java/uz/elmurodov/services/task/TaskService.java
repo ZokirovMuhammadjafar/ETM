@@ -12,6 +12,10 @@ import uz.elmurodov.services.BaseService;
  */
 public class TaskService extends BaseService<TaskRepositoryImpl, TaskCreateDto, TaskDto, Long> {
 
+    public TaskService(TaskRepositoryImpl taskRepository) {
+        super(taskRepository);
+    }
+
     @Override
     public ResponseEntity<Data<?>> create(TaskCreateDto dto) {
         return null;
