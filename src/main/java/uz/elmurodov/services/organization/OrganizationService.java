@@ -21,7 +21,14 @@ public class OrganizationService extends BaseService<OrganizationRepositoryImpl,
     }
 
     @Override
-    public ResponseEntity<Long> create(OrganizationCreateDto dto) {
+    public ResponseEntity<Data<?>> create(OrganizationCreateDto dto) {
+        try {
+            long id = repository.createOrganization(dto);
+            if (id > 0)
+                return new ResponseEntity<>(new Data<>("Organisation successfully created"));
+        } catch (CustomerSQLException e) {
+            return new ResponseEntity<>(new Data<>(e.getFriendlyMessage()), e.getStatus());
+        }
         return null;
     }
 
@@ -30,14 +37,42 @@ public class OrganizationService extends BaseService<OrganizationRepositoryImpl,
         return null;
     }
 
-    public ResponseEntity<Data<?>> createOrg(OrganizationCreateDto org) {
-        try {
-            Long id = repository.createOrganization(org);
-            System.out.println(id);
-            return new ResponseEntity<>(new Data<>("Organisation successfully created"));
-        }catch (CustomerSQLException e){
-            return new ResponseEntity<>(new Data<>(e.getFriendlyMessage()), e.getStatus());
-        }
+    private boolean checkOrganizationNameForExistence(String orgName) {
+        return false;
+    }
 
+    public ResponseEntity<Data<?>> block(String orgName) {
+        if (checkOrganizationNameForExistence(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization is not exist"), 404);
+        } else if (!OrganizationIsActive(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization is not active"), 405);
+        } else if (repository.blockOrg(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization successfully blocked"), 201);
+        } else
+            return null;
+    }
+
+    private boolean OrganizationIsActive(String orgName) {
+        return true;
+    }
+
+    public ResponseEntity<Data<?>> unblock(String orgName) {
+        if (checkOrganizationNameForExistence(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization is not exist"), 404);
+        } else if (OrganizationIsActive(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization is not blocked"), 405);
+        } else if (repository.unblockOrg(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization successfully unblocked"), 201);
+        } else
+            return null;
+    }
+
+    public ResponseEntity<Data<?>> delete(String orgName) {
+        if (checkOrganizationNameForExistence(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization is not exist"), 404);
+        } else if (repository.delete(orgName)) {
+            return new ResponseEntity<>(new Data<>("Organization successfully deleted"), 201);
+        } else
+            return null;
     }
 }

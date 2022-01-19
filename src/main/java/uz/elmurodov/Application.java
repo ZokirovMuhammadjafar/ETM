@@ -33,34 +33,35 @@ public class Application {
     private static void run() {
         Menu.getMainMenu();
         String choice = Input.getStr("Your choice: ").toUpperCase();
-        if ("LOGIN".equals(choice)) {
-            authUI.login();
-        } else if ("CRETE ORGANISATION".equals(choice) && SecurityHolder.hasPermission("CRETE_ORGANISATION")) {
+        if ("LOGIN".equals(choice)) authUI.login();
+        else if ("CRETE ORGANISATION".equals(choice) && SecurityHolder.hasPermission("CRETE_ORGANISATION"))
             organisationUI.create();
-        } else if ("BLOCK ORGANISATION".equals(choice) && SecurityHolder.hasPermission("BLOCK_ORGANISATION")) {
+        else if ("BLOCK ORGANISATION".equals(choice) && SecurityHolder.hasPermission("BLOCK_ORGANISATION"))
             organisationUI.block();
-        } else if ("UNBLOCK ORGANISATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANISATION")) {
+        else if ("UNBLOCK ORGANISATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANISATION"))
             organisationUI.unblock();
-        } else if ("DELETE ORGANISATION".equals(choice) && SecurityHolder.hasPermission("DELETE_ORGANISATION")) {
+        else if ("DELETE ORGANISATION".equals(choice) && SecurityHolder.hasPermission("DELETE_ORGANISATION"))
             organisationUI.delete();
-        } else if ("UPDATE ORGANISATION".equals(choice) && SecurityHolder.hasPermission("UPDATE_ORGANISATION")) {
-            organisationUI.update();
-        } else if ("LIST ORGANISATION".equals(choice) && SecurityHolder.hasPermission("LIST_ORGANISATION")) {
+        else if ("LIST ORGANISATION".equals(choice) && SecurityHolder.hasPermission("LIST_ORGANISATION"))
             organisationUI.list();
-        } else if ("CRETE ADMIN".equals(choice) && SecurityHolder.hasPermission("CRETE_ADMIN")) {
+        else if ("CRETE ADMIN".equals(choice) && SecurityHolder.hasPermission("CRETE_ADMIN"))
             authUI.createAdmin();
-        } else if ("BLOCK ADMIN".equals(choice) && SecurityHolder.hasPermission("BLOCK_ADMIN")) {
+        else if ("BLOCK ADMIN".equals(choice) && SecurityHolder.hasPermission("BLOCK_ADMIN"))
             authUI.blockAdmin();
-        } else if ("UNBLOCK ADMIN".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ADMIN")) {
+        else if ("UNBLOCK ADMIN".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ADMIN"))
             authUI.unblockAdmin();
-        } else if ("DELETE ADMIN".equals(choice) && SecurityHolder.hasPermission("DELETE_ADMIN")) {
+        else if ("DELETE ADMIN".equals(choice) && SecurityHolder.hasPermission("DELETE_ADMIN"))
             authUI.deleteAdmin();
-        } else if ("UPDATE ADMIN".equals(choice) && SecurityHolder.hasPermission("UPDATE_ADMIN")) {
+        else if ("UPDATE ADMIN".equals(choice) && SecurityHolder.hasPermission("UPDATE_ADMIN"))
             authUI.updateAdmin();
-        } else if ("LIST ADMIN".equals(choice) && SecurityHolder.hasPermission("LIST_ADMIN")) {
+        else if ("LIST ADMIN".equals(choice) && SecurityHolder.hasPermission("LIST_ADMIN"))
             authUI.listAdmin();
-        }
 
+
+
+            /*else if ("UPDATE ORGANISATION".equals(choice) && SecurityHolder.hasPermission("UPDATE_ORGANISATION")) {
+            organisationUI.update();
+        }*/
         run();
     }
 }

@@ -11,6 +11,7 @@ import uz.elmurodov.ui.BaseUI;
 import uz.elmurodov.utils.BaseUtils;
 import uz.jl.utils.Input;
 
+import java.lang.ref.WeakReference;
 import java.util.Objects;
 
 /**
@@ -30,28 +31,57 @@ public class OrganisationUI extends BaseAbstractUI implements BaseUI {
         org.setRegNum(Input.getStr("Enter regNum: "));
         org.setWebsite(Input.getStr("Enter website: "));
 
-        ResponseEntity<Data<?>> response = organizationService.createOrg(org);
-        show(response);
+        ResponseEntity<Data<?>> response = organizationService.create(org);
 
     }
 
     @Override
     public void block() {
+        OrganizationService organizationService = UNIContainer.getBean(OrganizationService.class);
+        listOfUnblockOrganizations();
+        String orgName = Input.getStr("Enter organization name which you want to block: ");
+        ResponseEntity<Data<?>> response = organizationService.block(orgName);
+        show(response);
+
+
+    }
+
+    private void listOfUnblockOrganizations() {
 
     }
 
     @Override
     public void unblock() {
+        OrganizationService organizationService = UNIContainer.getBean(OrganizationService.class);
+        listOfBlockedOrganizations();
+        String orgName = Input.getStr("Enter organization name which you want to unblock: ");
+        ResponseEntity<Data<?>> response = organizationService.unblock(orgName);
+        show(response);
+    }
+
+    private void listOfBlockedOrganizations() {
 
     }
 
     @Override
     public void delete() {
-
+        OrganizationService organizationService = UNIContainer.getBean(OrganizationService.class);
+        list();
+        String orgName = Input.getStr("Enter organization name which you want to delete: ");
+        ResponseEntity<Data<?>> response = organizationService.delete(orgName);
+        show(response);
     }
 
     @Override
     public void update() {
+        OrganizationService organizationService = UNIContainer.getBean(OrganizationService.class);
+        list();
+        String orgName = Input.getStr("Enter organization name which you want to update: ");
+
+
+
+        ResponseEntity<Data<?>> response = organizationService.delete(orgName);
+        show(response);
 
     }
 

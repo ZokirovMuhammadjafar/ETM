@@ -20,4 +20,20 @@ public class OrganizationRepositoryImpl extends BaseRepository {
         prepareArguments(("" + BaseUtils.gson.toJson(org)), SecurityHolder.session.getId());
         return (Long) callProcedure(property.get("org.create"), Types.BIGINT);
     }
+
+    public boolean blockOrg(String orgName) {
+        prepareArguments(orgName, SecurityHolder.session.getId());
+        return (boolean) callProcedure(property.get("org.block"), Types.BOOLEAN);
+    }
+
+
+    public boolean unblockOrg(String orgName) {
+        prepareArguments(orgName, SecurityHolder.session.getId());
+        return (boolean) callProcedure(property.get("org.unblock"), Types.BOOLEAN);
+    }
+
+    public boolean delete(String orgName) {
+        prepareArguments(orgName, SecurityHolder.session.getId());
+        return (boolean) callProcedure(property.get("org.delete"), Types.BOOLEAN);
+    }
 }

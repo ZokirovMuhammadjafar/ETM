@@ -30,7 +30,7 @@ public class AuthUserService extends BaseService<AuthUserRepositoryImpl,
     }
 
     @Override
-    public ResponseEntity<Long> create(AuthUserCreateDto dto) {
+    public ResponseEntity<Data<?>> create(AuthUserCreateDto dto) {
         try {
             hasPermission("CREATE_ORGANIZATION");
             return null;

@@ -8,12 +8,10 @@ import uz.elmurodov.services.auth.AuthUserService;
 import uz.elmurodov.ui.BaseAbstractUI;
 import uz.jl.utils.Input;
 
-import java.util.Objects;
-
 /**
  * @author Saydali Murodullayev, Thu 12:28 PM. 1/13/2022
  */
-public class AuthUI extends BaseAbstractUI{
+public class AuthUI extends BaseAbstractUI {
 
     public void login() {
         AuthUserService service = UNIContainer.getBean(AuthUserService.class);
