@@ -40,8 +40,9 @@ public class OrganizationService extends BaseService<OrganizationRepositoryImpl,
     public ResponseEntity<OrganizationDto> get(Long id) {
         return null;
     }
-    public List<OrganizationDto> getOrganization(long id ,String... args){
-       return UNIContainer.getBean(OrganizationRepositoryImpl.class).getOrg(id);
+
+    public List<OrganizationDto> getOrganization(long id, String... args) {
+        return UNIContainer.getBean(OrganizationRepositoryImpl.class).getOrg(id);
     }
 
     private boolean checkOrganizationNameForExistence(String orgName) {

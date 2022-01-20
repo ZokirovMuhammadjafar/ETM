@@ -22,12 +22,17 @@ public class Menu {
             for (RolesItem rolesItem : SecurityHolder.session.getRoles()) {
                 if (rolesItem.getName().toUpperCase(Locale.ROOT).equals("ADMIN")) {
 
-
                     Print.println(Color.CYAN, "add members to project -> ADD_MEMBERS_TO_PROJECT");
                     Print.println(Color.CYAN, "remove members to project -> REMOVE_MEMBERS_TO_PROJECT");
                     Print.println(Color.CYAN, "block members to project -> BLOCK_MEMBERS_TO_PROJECT");
                     Print.println(Color.CYAN, "unblock members to project -> UNBLOCK_MEMBERS_TO_PROJECT");
                     Print.println(Color.CYAN, "list members to project -> LIST_MEMBERS_TO_PROJECT");
+
+                    Print.println(Color.CYAN, "add members to task -> ADD_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "remove members to task -> REMOVE_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "block members to task -> BLOCK_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "unblock members to task -> UNBLOCK_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "list members to task -> LIST_MEMBERS_FROM_TASK");
 
                     Print.println(Color.CYAN, "create project -> CREATE_PROJECT");
                     Print.println(Color.CYAN, "block project -> BLOCK_PROJECT");
@@ -36,8 +41,6 @@ public class Menu {
                     Print.println(Color.CYAN, "update project -> UPDATE_PROJECT");
 
                     Print.println(Color.CYAN, "create column -> CREATE_COLUMN");
-                    Print.println(Color.CYAN, "block column -> BLOCK_COLUMN");
-                    Print.println(Color.CYAN, "unblock column -> UNBLOCK_COLUMN");
                     Print.println(Color.CYAN, "delete column -> DELETE_COLUMN");
                     Print.println(Color.CYAN, "update column -> UPDATE_COLUMN");
                     Print.println(Color.CYAN, "list column -> LIST_COLUMN");
@@ -49,19 +52,36 @@ public class Menu {
                     Print.println(Color.CYAN, "update task -> UPDATE_TASK");
                     Print.println(Color.CYAN, "list task -> LIST_TASK");
 
-                    Print.println(Color.CYAN, "create comment -> CREATE_COMMENT");
+                    Print.println(Color.CYAN, "write comment -> WRITE_COMMENT");
 
-
-
-
-
-
-
-
-                } else if (rolesItem.getName().toUpperCase(Locale.ROOT).equals("SUPER_USER")) {
                 } else if (Pattern.matches("((SUPER_USER) | (EMPLOYEE) | (HR))", rolesItem.getName().toUpperCase(Locale.ROOT))) {
                     permissions.forEach(permissionsItem -> Print.println(Color.CYAN, permissionsItem.getName() + " -> " + permissionsItem.getCode()));
                 } else if (rolesItem.getName().toUpperCase(Locale.ROOT).equals("MANAGER")) {
+                    Print.println(Color.CYAN, "add members to project -> ADD_MEMBERS_TO_PROJECT");
+                    Print.println(Color.CYAN, "remove members to project -> REMOVE_MEMBERS_TO_PROJECT");
+                    Print.println(Color.CYAN, "block members to project -> BLOCK_MEMBERS_TO_PROJECT");
+                    Print.println(Color.CYAN, "unblock members to project -> UNBLOCK_MEMBERS_TO_PROJECT");
+                    Print.println(Color.CYAN, "list members to project -> LIST_MEMBERS_TO_PROJECT");
+
+                    Print.println(Color.CYAN, "add members to task -> ADD_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "remove members to task -> REMOVE_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "block members to task -> BLOCK_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "unblock members to task -> UNBLOCK_MEMBERS_TO_TASK");
+                    Print.println(Color.CYAN, "list members to task -> LIST_MEMBERS_FROM_TASK");
+
+                    Print.println(Color.CYAN, "create column -> CREATE_COLUMN");
+                    Print.println(Color.CYAN, "delete column -> DELETE_COLUMN");
+                    Print.println(Color.CYAN, "update column -> UPDATE_COLUMN");
+                    Print.println(Color.CYAN, "list column -> LIST_COLUMN");
+
+                    Print.println(Color.CYAN, "create task -> CREATE_TASK");
+                    Print.println(Color.CYAN, "block task -> BLOCK_TASK");
+                    Print.println(Color.CYAN, "unblock task -> UNBLOCK_TASK");
+                    Print.println(Color.CYAN, "delete task -> DELETE_TASK");
+                    Print.println(Color.CYAN, "update task -> UPDATE_TASK");
+                    Print.println(Color.CYAN, "list task -> LIST_TASK");
+                    Print.println(Color.CYAN, "write comment -> WRITE_COMMENT");
+
 
                 }
             }

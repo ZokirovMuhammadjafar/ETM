@@ -36,4 +36,24 @@ public class TaskUI extends BaseAbstractUI implements BaseUI {
     public void list() {
 
     }
+
+    public void addMember() {
+
+    }
+
+    public void removeMember() {
+
+    }
+
+    public void blockMember() {
+
+    }
+
+    public void UnblockMember() {
+
+    }
+
+    public void listMembers() {
+
+    }
 }

@@ -91,7 +91,6 @@ public class Application {
             taskUI.update();
         else if ("UPDATE LABEL".equals(choice) && SecurityHolder.hasPermission("UPDATE_LABEL")) taskUI.update();
 
-
         else if ("CREATE HR".equals(choice) && SecurityHolder.hasPermission("CREATE_HR")) authUI.createHR();
         else if ("BLOCK HR".equals(choice) && SecurityHolder.hasPermission("BLOCK_HR")) authUI.blockHR();
         else if ("UNBLOCK HR".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_HR")) authUI.unblockHR();
@@ -121,6 +120,33 @@ public class Application {
         else if ("UPDATE EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("UPDATE_EMPLOYEE"))
             authUI.updateEMPLOYEE();
         else if ("LIST EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("LIST_EMPLOYEE")) authUI.listEMPLOYEE();
+
+
+        else if ("ADD_MEMBERS_TO_TASK".equals(choice) && SecurityHolder.hasPermission("ADD_MEMBERS_TO_TASK"))
+            taskUI.addMember();
+        else if ("REMOVE_MEMBERS_TO_TASK".equals(choice) && SecurityHolder.hasPermission("REMOVE_MEMBERS_TO_TASK"))
+            taskUI.removeMember();
+        else if ("BLOCK_MEMBERS_TO_TASK".equals(choice) && SecurityHolder.hasPermission("BLOCK_MEMBERS_TO_TASK"))
+            taskUI.blockMember();
+        else if ("UNBLOCK_MEMBERS_TO_TASK".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_MEMBERS_TO_TASK"))
+            taskUI.UnblockMember();
+        else if ("LIST_MEMBERS_TO_TASK".equals(choice) && SecurityHolder.hasPermission("LIST_MEMBERS_TO_TASK"))
+            taskUI.listMembers();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         run();
     }
