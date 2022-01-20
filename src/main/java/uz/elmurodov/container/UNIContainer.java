@@ -54,6 +54,7 @@ public class UNIContainer {
     private static final LabelService LABEL_SERVICE;
 
 
+
     static {
         AUTHUI = new AuthUI();
         ORGANISATIONUI = new OrganisationUI();

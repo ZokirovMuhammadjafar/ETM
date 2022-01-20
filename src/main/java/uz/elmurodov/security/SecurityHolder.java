@@ -10,6 +10,12 @@ import java.util.Objects;
 @ToString
 public class SecurityHolder {
     public static SessionUser session;
+    public static SessionOrganization sessionOrganization;
+    public static SessionProject sessionProject;
+    public static SessionColumn sessionColumn;
+    public static SessionTask sessionTask;
+    public static SessionComment sessionComment;
+
     public static List<PermissionsItem> permissions;
 
     public static boolean hasPermission(String permission) {
