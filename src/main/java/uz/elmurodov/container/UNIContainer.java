@@ -99,7 +99,7 @@ public class UNIContainer {
     public static <T> T getBean(String bean) {
         bean = bean.toUpperCase(Locale.ROOT);
         return switch (bean) {
-
+            case "CONNECT" -> (T) CONNECTION;
             case "AUTHUI" -> (T) AUTHUI;
             case "ORGANISATIONUI" -> (T) ORGANISATIONUI;
             case "PROJECTUI" -> (T) PROJECTUI;
