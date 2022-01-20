@@ -1,5 +1,6 @@
 package uz.elmurodov.services.auth;
 
+import uz.elmurodov.container.UNIContainer;
 import uz.elmurodov.dtos.auth.AuthUserCreateDto;
 import uz.elmurodov.dtos.auth.AuthUserDto;
 import uz.elmurodov.exception.CustomerSQLException;
@@ -32,8 +33,8 @@ public class AuthUserService extends BaseService<AuthUserRepositoryImpl,
     @Override
     public ResponseEntity<Data<?>> create(AuthUserCreateDto dto) {
         try {
-            hasPermission("CREATE_ORGANIZATION");
-            return null;
+            hasPermission("CREATE_ADMIN");
+            return new  ResponseEntity<>(UNIContainer.getBean(AuthUserRepositoryImpl.class).create_admin(dto));
         } catch (Exception e) {
             return null;
         }

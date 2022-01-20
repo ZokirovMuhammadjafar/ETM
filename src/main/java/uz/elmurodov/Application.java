@@ -28,7 +28,7 @@ public class Application {
         columnUI = UNIContainer.getBean(ColumnUI.class);
         taskUI = UNIContainer.getBean(TaskUI.class);
         commentUI = UNIContainer.getBean(CommentUI.class);
-        labelUI = UNIContainer.getBean(LabelUI.class);
+
         Application.run();
     }
 
@@ -42,11 +42,13 @@ public class Application {
             organisationUI.create();
         else if ("BLOCK ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("BLOCK_ORGANIZATION"))
             organisationUI.block();
-        else if ("UNBLOCK ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANIZATION"))
+        } else if ("UNBLOCK_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANIZATION")) {
             organisationUI.unblock();
-        else if ("DELETE ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("DELETE_ORGANIZATION"))
+        } else if ("DELETE_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("DELETE_ORGANIZATION")) {
             organisationUI.delete();
-        else if ("LIST ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("LIST_ORGANIZATION"))
+        } else if ("UPDATE_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UPDATE_ORGANIZATION")) {
+            organisationUI.update();
+        } else if ("LIST_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("LIST_ORGANIZATION")) {
             organisationUI.list();
 
         else if ("CREATE ADMIN".equals(choice) && SecurityHolder.hasPermission("CREATE_ADMIN")) authUI.createAdmin();
