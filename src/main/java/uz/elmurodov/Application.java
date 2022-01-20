@@ -37,18 +37,17 @@ public class Application {
         String choice = Input.getStr("Your choice: ").toUpperCase();
 
         if ("LOGIN".equals(choice)) authUI.login();
-
         else if ("CREATE ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("CREATE_ORGANIZATION"))
             organisationUI.create();
         else if ("BLOCK ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("BLOCK_ORGANIZATION"))
             organisationUI.block();
-        else if ("UNBLOCK_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANIZATION")) {
+        else if ("UNBLOCK_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANIZATION"))
             organisationUI.unblock();
-        } else if ("DELETE_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("DELETE_ORGANIZATION")) {
+        else if ("DELETE_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("DELETE_ORGANIZATION"))
             organisationUI.delete();
-        } else if ("UPDATE_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UPDATE_ORGANIZATION")) {
+        else if ("UPDATE_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UPDATE_ORGANIZATION"))
             organisationUI.update();
-        } else if ("LIST_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("LIST_ORGANIZATION")) {
+        else if ("LIST_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("LIST_ORGANIZATION")) {
             organisationUI.list();
 
         } else if ("CREATE ADMIN".equals(choice) && SecurityHolder.hasPermission("CREATE_ADMIN")) authUI.createAdmin();
@@ -132,21 +131,6 @@ public class Application {
             taskUI.UnblockMember();
         else if ("LIST_MEMBERS_TO_TASK".equals(choice) && SecurityHolder.hasPermission("LIST_MEMBERS_TO_TASK"))
             taskUI.listMembers();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         run();
     }

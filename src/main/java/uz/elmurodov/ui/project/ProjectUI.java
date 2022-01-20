@@ -26,7 +26,6 @@ public class ProjectUI extends BaseAbstractUI implements BaseUI {
         dto.setDescription(Input.getStr("Enter description: "));
         dto.setTz(Input.getStr("Enter details about your project: "));
         dto.setOrganization_id(SecurityHolder.session.getOrganization().getId());
-
         ResponseEntity<Data<?>> response = projectService.create(dto);
         show(response);
     }

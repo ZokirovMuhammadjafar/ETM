@@ -20,10 +20,8 @@ public abstract class BaseAbstractUI {
     protected void show(ResponseEntity<Data<?>> response) {
         if (Pattern.matches("(200|201|202)", "" + response.getStatus()))
             Print.println(Color.GREEN, response.getBody().getData());
-        else if (response.getStatus() == 404)
-            Print.println(Color.RED, response.getBody().getData());
         else
-            Print.println(Color.RED, "Response not found");
+            Print.println(Color.RED, response.getBody().getData());
     }
 
 }
