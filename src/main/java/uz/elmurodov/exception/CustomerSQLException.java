@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import uz.elmurodov.enums.HttpStatus;
 
+import java.sql.SQLException;
+
 @Getter
 @Setter
 public class CustomerSQLException extends RuntimeException {
