@@ -50,7 +50,8 @@ public class AuthUI extends BaseAbstractUI{
         String email=Input.getStr("enter email");
         String phone=Input.getStr("enter phone number (998936432434)");
         AuthUserService authUserService=UNIContainer.getBean(AuthUserService.class);
-        ResponseEntity<Long> response=authUserService.create(new AuthUserCreateDto(username,password,email,phone,"en",firstname,lastname,id));
+        ResponseEntity<Data<?>> response=authUserService.create(new AuthUserCreateDto(username,password,email,phone,"en",firstname,lastname,id));
+        show(response);
     }
 
     public void blockAdmin() {
