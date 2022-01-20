@@ -32,7 +32,7 @@ public class OrganisationUI extends BaseAbstractUI implements BaseUI {
         org.setWebsite(Input.getStr("Enter website: "));
 
         ResponseEntity<Data<?>> response = organizationService.create(org);
-show(response);
+        show(response);
     }
 
     @Override

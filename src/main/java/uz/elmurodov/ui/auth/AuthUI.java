@@ -6,7 +6,6 @@ import uz.elmurodov.dtos.auth.AuthUserCreateDto;
 import uz.elmurodov.dtos.organization.OrganizationDto;
 import uz.elmurodov.response.Data;
 import uz.elmurodov.response.ResponseEntity;
-import uz.elmurodov.security.Organization;
 import uz.elmurodov.services.auth.AuthUserService;
 import uz.elmurodov.services.organization.OrganizationService;
 import uz.elmurodov.ui.BaseAbstractUI;
@@ -16,7 +15,6 @@ import java.util.List;
 
 import static uz.elmurodov.security.SecurityHolder.session;
 import static uz.jl.utils.Input.getNum;
-import static uz.jl.utils.Print.print;
 
 /**
  * @author Saydali Murodullayev, Thu 12:28 PM. 1/13/2022
@@ -51,7 +49,6 @@ public class AuthUI extends BaseAbstractUI{
         String phone=Input.getStr("enter phone number (998936432434)");
         AuthUserService authUserService=UNIContainer.getBean(AuthUserService.class);
         ResponseEntity<Data<?>> response=authUserService.create(new AuthUserCreateDto(username,password,email,phone,"en",firstname,lastname,id));
-        show(response);
     }
 
     public void blockAdmin() {
@@ -72,6 +69,78 @@ public class AuthUI extends BaseAbstractUI{
     }
 
     public void listAdmin() {
+
+    }
+
+    public void createHR() {
+
+
+    }
+
+    public void blockHR() {
+
+    }
+
+    public void unblockHR() {
+
+    }
+
+    public void deleteHR() {
+
+    }
+
+    public void updateHR() {
+
+    }
+
+    public void listHR() {
+
+    }
+
+    public void createMANAGER() {
+
+    }
+
+    public void blockMANAGER() {
+
+    }
+
+    public void unblockMANAGER() {
+    }
+
+    public void deleteMANAGER() {
+
+    }
+
+    public void updateMANAGER() {
+
+    }
+
+    public void listMANAGER() {
+
+    }
+
+    public void createEMPLOYEE() {
+
+    }
+
+    public void blockEMPLOYEE() {
+
+    }
+
+    public void unblockEMPLOYEE() {
+
+    }
+
+    public void deleteEMPLOYEE() {
+
+    }
+
+    public void updateEMPLOYEE() {
+
+    }
+
+    public void listEMPLOYEE() {
 
     }
 }

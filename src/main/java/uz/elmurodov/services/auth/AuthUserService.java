@@ -34,7 +34,7 @@ public class AuthUserService extends BaseService<AuthUserRepositoryImpl,
     public ResponseEntity<Data<?>> create(AuthUserCreateDto dto) {
         try {
             hasPermission("CREATE_ADMIN");
-            return new  ResponseEntity<>(UNIContainer.getBean(AuthUserRepositoryImpl.class).create_admin(dto));
+            return new ResponseEntity<>(new Data<>(UNIContainer.getBean(AuthUserRepositoryImpl.class).create_admin(dto)));
         } catch (Exception e) {
             return null;
         }
