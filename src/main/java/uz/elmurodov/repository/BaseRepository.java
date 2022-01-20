@@ -28,6 +28,7 @@ public class BaseRepository {
         if (resultSet.next()) {
             return switch (outType) {
                 case Types.VARCHAR -> resultSet.getString(1);
+                case Types.BLOB -> resultSet.getString(1);
                 case Types.BIGINT -> resultSet.getLong(1);
                 case Types.BOOLEAN -> resultSet.getBoolean(1);
                 default -> throw new IllegalStateException("Unexpected value: " + outType);
