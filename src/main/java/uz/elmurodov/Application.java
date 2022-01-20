@@ -42,7 +42,7 @@ public class Application {
             organisationUI.create();
         else if ("BLOCK ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("BLOCK_ORGANIZATION"))
             organisationUI.block();
-        } else if ("UNBLOCK_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANIZATION")) {
+        else if ("UNBLOCK_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ORGANIZATION")) {
             organisationUI.unblock();
         } else if ("DELETE_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("DELETE_ORGANIZATION")) {
             organisationUI.delete();
@@ -51,7 +51,7 @@ public class Application {
         } else if ("LIST_ORGANIZATION".equals(choice) && SecurityHolder.hasPermission("LIST_ORGANIZATION")) {
             organisationUI.list();
 
-        else if ("CREATE ADMIN".equals(choice) && SecurityHolder.hasPermission("CREATE_ADMIN")) authUI.createAdmin();
+        } else if ("CREATE ADMIN".equals(choice) && SecurityHolder.hasPermission("CREATE_ADMIN")) authUI.createAdmin();
         else if ("BLOCK ADMIN".equals(choice) && SecurityHolder.hasPermission("BLOCK_ADMIN")) authUI.blockAdmin();
         else if ("UNBLOCK ADMIN".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_ADMIN")) authUI.unblockAdmin();
         else if ("DELETE ADMIN".equals(choice) && SecurityHolder.hasPermission("DELETE_ADMIN")) authUI.deleteAdmin();
@@ -87,7 +87,8 @@ public class Application {
         else if ("LIST LABEL".equals(choice) && SecurityHolder.hasPermission("LIST_LABEL")) taskUI.list();
         else if ("UPDATE LABEL".equals(choice) && SecurityHolder.hasPermission("UPDATE_LABEL")) taskUI.update();
 
-        else if ("ADD MEMBER TO PROJECT".equals(choice) && SecurityHolder.hasPermission("UPDATE_LABEL")) taskUI.update();
+        else if ("ADD MEMBER TO PROJECT".equals(choice) && SecurityHolder.hasPermission("UPDATE_LABEL"))
+            taskUI.update();
         else if ("UPDATE LABEL".equals(choice) && SecurityHolder.hasPermission("UPDATE_LABEL")) taskUI.update();
 
 
@@ -98,23 +99,28 @@ public class Application {
         else if ("UPDATE HR".equals(choice) && SecurityHolder.hasPermission("UPDATE_HR")) authUI.updateHR();
         else if ("LIST HR".equals(choice) && SecurityHolder.hasPermission("LIST_HR")) authUI.listHR();
 
-        else if ("CREATE MANAGER".equals(choice) && SecurityHolder.hasPermission("CREATE_MANAGER")) authUI.createMANAGER();
+        else if ("CREATE MANAGER".equals(choice) && SecurityHolder.hasPermission("CREATE_MANAGER"))
+            authUI.createMANAGER();
         else if ("BLOCK MANAGER".equals(choice) && SecurityHolder.hasPermission("BLOCK_MANAGER")) authUI.blockMANAGER();
-        else if ("UNBLOCK MANAGER".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_MANAGER")) authUI.unblockMANAGER();
-        else if ("DELETE MANAGER".equals(choice) && SecurityHolder.hasPermission("DELETE_MANAGER")) authUI.deleteMANAGER();
-        else if ("UPDATE MANAGER".equals(choice) && SecurityHolder.hasPermission("UPDATE_MANAGER")) authUI.updateMANAGER();
+        else if ("UNBLOCK MANAGER".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_MANAGER"))
+            authUI.unblockMANAGER();
+        else if ("DELETE MANAGER".equals(choice) && SecurityHolder.hasPermission("DELETE_MANAGER"))
+            authUI.deleteMANAGER();
+        else if ("UPDATE MANAGER".equals(choice) && SecurityHolder.hasPermission("UPDATE_MANAGER"))
+            authUI.updateMANAGER();
         else if ("LIST MANAGER".equals(choice) && SecurityHolder.hasPermission("LIST_MANAGER")) authUI.listMANAGER();
 
-        else if ("CREATE EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("CREATE_EMPLOYEE")) authUI.createEMPLOYEE();
-        else if ("BLOCK EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("BLOCK_EMPLOYEE")) authUI.blockEMPLOYEE();
-        else if ("UNBLOCK EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_EMPLOYEE")) authUI.unblockEMPLOYEE();
-        else if ("DELETE EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("DELETE_EMPLOYEE")) authUI.deleteEMPLOYEE();
-        else if ("UPDATE EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("UPDATE_EMPLOYEE")) authUI.updateEMPLOYEE();
+        else if ("CREATE EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("CREATE_EMPLOYEE"))
+            authUI.createEMPLOYEE();
+        else if ("BLOCK EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("BLOCK_EMPLOYEE"))
+            authUI.blockEMPLOYEE();
+        else if ("UNBLOCK EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("UNBLOCK_EMPLOYEE"))
+            authUI.unblockEMPLOYEE();
+        else if ("DELETE EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("DELETE_EMPLOYEE"))
+            authUI.deleteEMPLOYEE();
+        else if ("UPDATE EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("UPDATE_EMPLOYEE"))
+            authUI.updateEMPLOYEE();
         else if ("LIST EMPLOYEE".equals(choice) && SecurityHolder.hasPermission("LIST_EMPLOYEE")) authUI.listEMPLOYEE();
-
-
-
-
 
         run();
     }
